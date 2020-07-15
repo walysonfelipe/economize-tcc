@@ -1,0 +1,67 @@
+    <-- NESTE ARQUVIO ESTARÃO TRECHOS DE CÓDIGOS PRONTOS PARA SEREM UTILIZADOS COMO BEM ENTENDERMOS -->
+
+    ------------------------------------------------------------------------------------------------
+
+    # MODAL JQUERY MUITO LEVE E PRÁTICO (HTML/CSS/JS) (
+
+        <button class="trigger">Open</button>
+        <section class="overlay">
+        <button class="trigger">Close</button>
+        </section>
+
+        -------------------------------------
+
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 200px;
+            width: 200px;
+            background: gray;
+        }
+
+        -------------------------------------
+
+        $(".trigger").click(function() {
+            $(".overlay").toggle();
+        });
+
+    )
+
+    # 
+
+
+    # MOSTRAR BOTÃO "VER MAIS PRODUTOS" (PHP/HTML) (
+        $sel = $conn->prepare("SELECT COUNT(p.produto_id) AS qtd FROM produto AS p JOIN marca_prod AS m ON p.produto_marca=m.marca_id JOIN categ AS c ON p.produto_categ=c.categ_id JOIN subcateg AS s ON s.subcateg_id=c.subcateg_id JOIN dados_armazem AS d ON p.produto_id=d.produto_id WHERE s.depart_id={$_SESSION[Department::SESSION]['depart_id']} AND d.armazem_id={$_SESSION[Storage::SESSION]['arm_id']}");
+        $sel->execute();
+        $res = $sel->fetchAll();
+        if($res[0]['qtd'] == 0):?>
+            <h3>Não houve resposta</h3>
+            <?php
+        elseif($res[0]['qtd'] == 1):?>
+            <button disable>Ver mais</button>
+            <p>Mostrando o único produto</p>
+            <?php
+        elseif($res[0]['qtd'] <= $_SESSION['qryLimit']):?>
+            <button disable>Ver mais</button>
+            <p>Mostrando todos os <?= $res[0]['qtd']; ?> produtos</p>
+            <?php
+        else:?>
+            <button>Ver mais</button>
+            <p>Mostrando <?= $_SESSION['qryLimit']; ?> de <?= $res[0]['qtd']; ?> produtos</p>
+            <?php
+        endif;
+    )
+
+    #
+
+    ## IDEIAS PARA O PROJETO
+    - Guardar todos os endereços que o usuário utilizar nas comprar (Ex.: Mercado Livre)
+    - Mudar forma de criptografia dos ids de produtos
+    - Adicionar link nos banners da HOME
+    - Melhorar estatísticas do usuário
+    - Desenvolver dashboard do administrador
+    - Página para as promoções
+    - Paginação nos departamentos
