@@ -4,13 +4,13 @@
     
     abstract class Mailer
     {
-        const HOST = "educa-mais-casadacrianca.com.br";
-        const USERNAME = 'adm@educa-mais-casadacrianca.com.br';
-        const PASSWORD = 'fIJKO~evKR4#';
-        const NAME_FROM = "Suporte Economize";
-        const EMAIL_FROM = "Contato@educa-mais-casadacrianca.com.br";
-        const TO_ADDRESS = "urbancode.adm@gmail.com";
-        const TO_NAME = "UrbanCode";
+        const HOST = "testesite.com.br";
+        const USERNAME = 'teste@testesite.com.br';
+        const PASSWORD = 'SENHA';
+        const NAME_FROM = "teste";
+        const EMAIL_FROM = "contato@testesite.com.br";
+        const TO_ADDRESS = "teste.adm@gmail.com";
+        const TO_NAME = "teste";
         const PROJECT = "Mercado Digital e.conomize";
         protected $mail;
 
