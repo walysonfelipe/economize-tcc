@@ -3,6 +3,7 @@
 
     class Sql
     {
+	        const HOSTNAME = "HOSTNAME";
 		const USERNAME = "NOME DO USUARIO";
 		const PASSWORD = "SENHA DO USUARIO";
 		const DBNAME = "NOME DO BANCO";
