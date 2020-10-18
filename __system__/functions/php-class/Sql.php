@@ -3,10 +3,9 @@
 
     class Sql
     {
-        const HOSTNAME = "localhost";
-		const USERNAME = "root";
-		const PASSWORD = "";
-		const DBNAME = "economize";
+		const USERNAME = "NOME DO USUARIO";
+		const PASSWORD = "SENHA DO USUARIO";
+		const DBNAME = "NOME DO BANCO";
 
 		private $conn;
 
